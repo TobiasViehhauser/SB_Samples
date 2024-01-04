@@ -18,6 +18,5 @@ Zur Vereinfachung können Sie sich auf n = 2k
 für ein ganzzahliges k beschränken
  */
 
-// Erstelle Java Programm MinMax ohne Divide-and-Conquer, protokolliere die Anzahl der Vergleiche
 
-// Erstelle Java Programm MinMax mit Divide-and-Conquer, protokolliere die Anzahl der Vergleiche
+

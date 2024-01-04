@@ -25,20 +25,102 @@ maximal 451 Elemente enthalten. Die Elemente sind ganze Zahlen.
 eingibt, umzukehren.
  */
 
+
+
 // Klasse Stack
 
-// Methode init(S)
+class Stack {
 
-// Methode push(S,x)
+    //2 Versuche
+    //attributes for a stack
+    private int[] stack;
+    private int top;
 
-// Methode top(S)
+    //constructor
+    Stack(int size) {
+        stack = new int[size];
+        top = -1;
+    }
 
-// Methode pop(S)
+    // Methode init(s)
+    void init(Stack s) {
+        s.top = -1;
+    }
 
-// Methode empty(S)
 
-// Methode full(S)
+    //Methode push automatisch generiert
+    void push(Stack s, int x) {
+        if (s.top == stack.length - 1) {
+            System.out.println("Stack is full");
+        } else {
+            s.stack[++s.top] = x;
+        }
+    }
 
-// Methode main
+    //1 Versuch
+    // Methode top(S)
+    int top(Stack s) {
+        if (s.top == -1) {
+            System.out.println("Stack is empty");
+            return 0;
+        } else {
+            return s.stack[s.top];
+        }
+    }
 
-// Methode reverse
+    //1. Versuch
+    //Methode Pop(s)
+    int pop(Stack s) {
+        if (s.top == -1) {
+            System.out.println("Stack is empty");
+            return 0;
+        } else {
+            return s.stack[s.top--];
+        }
+    }
+
+    //1 Versuch
+    //Method empty(S) returns true if the stack is empty
+    boolean empty(Stack s) {
+        if (s.top == -1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //Method full(s) returns true if the stack is full
+    boolean full(Stack s){
+        if(s.top == stack.length - 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+//Method main: Stack will all operations and a max of 451 elements
+    public static void main(String[] args) {
+        //Stack with maximum 451 Elements
+        Stack s = new Stack(451);
+        s.init(s);
+        //fill stack with 451 elements
+        for (int i = 0; i < 451; i++) {
+            s.push(s, i);
+        }
+
+        //3 Versuche aber dann nacheinander automatisch
+        //implement top method
+        System.out.println(s.top(s));
+        //implement pop method
+        System.out.println(s.pop(s));
+        //implement empty method
+        System.out.println(s.empty(s));
+        //implement full method
+        System.out.println(s.full(s));
+        //implement reverse method
+        s.reverse(s);
+        System.out.println(s.top(s));
+    }
+
+}
+

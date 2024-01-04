@@ -15,8 +15,16 @@ boolean exit;
 // 1.
 p = root; while (p != null) p = p.next;
 
+//simplify code: p = root; while (p != null) p = p.next;
+        while (p != null) p = p.next;
+
 // 2.
 p = new Node(0); p = current;
+
+//simplify code: p = new Node(0); p = current;
+        while (p != null) p = p.next;
+
+        p = root; while (p != null && p.val != val) { …; p = p.next; }
 
 // 3.
 if (current.val == val) exit = true; else exit = false;
