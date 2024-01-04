@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Amazon_Codewhisperer/Amazon_Codewhisperer.iml" filepath="$PROJECT_DIR$/Amazon_Codewhisperer/Amazon_Codewhisperer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Arbeit.iml" filepath="$PROJECT_DIR$/.idea/Arbeit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Github_Copilot/Github_Copilot.iml" filepath="$PROJECT_DIR$/Github_Copilot/Github_Copilot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tabnine/Tabnine.iml" filepath="$PROJECT_DIR$/Tabnine/Tabnine.iml" />
+    </modules>
+  </component>
+</project>
