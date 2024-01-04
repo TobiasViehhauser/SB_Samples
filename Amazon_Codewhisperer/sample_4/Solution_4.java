@@ -1,4 +1,6 @@
 /**
+ * Solution for
+ *
  * Sample_4
  * from Sprechen Sie Java? by Hanspeter Mössenböck
  * example 14.4 on page 202
@@ -25,4 +27,3 @@ int i = random.nextInt(n); // liefert eine Zufallszahl im Bereich 0 bis n-1
 // Enumeration für den Kartenstapel
 
 // Implementiere das Kartenspiel Black Jack
-

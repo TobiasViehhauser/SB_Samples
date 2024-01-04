@@ -1,8 +1,11 @@
 /**
+ * Solution for
+ *
  * Sample_3
  * from Sprechen Sie Java? by Hanspeter Mössenböck
  * example 13.4 on page 197
  */
+
 
 //Gegebene Klasse ListNode:
 class ListNode {

@@ -1,4 +1,6 @@
 /**
+ * Solution for
+ *
  * Sample_2
  * from Sprechen Sie Java? by Hanspeter Mössenböck
  * example 12.7 on page 180
@@ -8,8 +10,9 @@
 class Node { int val; Node next; }
         Node p, current, previous, root;
 boolean exit;
-
 //Verbessere oder korrigiere folgende Code Elemente:
+// Lösung:
+
 // 1.
 p = root; while (p != null) p = p.next;
 

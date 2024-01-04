@@ -1,4 +1,6 @@
 /**
+ * Solution for
+ *
  * Sample_5
  * from Sprechen Sie Java? by Hanspeter Mössenböck
  * example 16.2 on page 219
