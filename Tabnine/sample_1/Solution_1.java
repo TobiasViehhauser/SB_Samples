@@ -1,26 +1,68 @@
 /**
  * Solution for
  *
- * Sample_1
+ * Sample_2
  * from Sprechen Sie Java? by Hanspeter Mössenböck
- * example 12.5 on page 179
+ * example 12.7 on page 180
  */
 
-/*
-Bibliotheksverwaltung. Implementieren Sie eine Bibliotheksverwaltung mit
-folgender Funktionalität:
- */
+// Gegeben Klasse:
+class Node {
+    int val;
+    Node next;
+}
 
-// Klasse Book
+    Node p, current, previous, root;
+    boolean exit;
 
-// Methode search
+// Verbessere oder korrigiere folgende Code-Elemente:
+// 1.
+p = root;
+        while (p != null) {
+        System.out.println(p.val);
+        p = p.next;
+        }
 
-// Methode delete
+// 2.
+        p = new Node(0);
+        p = current;
 
-// Methode iterate
+// 3.
+        if (current.val == val) {
+        exit = true;
+        } else {
+        exit = false;
+        }
+        while (p != null && p.val != val) {
+        // Code
+        p = p.next;
+        }
+        if (p != null && p.val == val) {
+        // Code
+        }
 
-// Klasse Library
+// 4.
+        if (current.next == null) {
+        previous.next = null;
+        current.next = root;
+        root = current;
+        } else {
+        previous.next = current.next;
+        current.next = root;
+        root = current;
+        }
 
-// Methode addBook
+// 5.
+        exit = false;
+        while (p != null && !exit) {
+        if (p.val == val) {
+        exit = true;
+        } else {
+        p = p.next;
+        }
+        }
 
-// Testprogramm
+// 6.
+        p = root;
+        root = current;
+        root.next = p;

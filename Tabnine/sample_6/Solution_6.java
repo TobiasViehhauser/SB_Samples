@@ -19,5 +19,100 @@ für ein ganzzahliges k beschränken
  */
 
 // Erstelle Java Programm MinMax ohne Divide-and-Conquer, protokolliere die Anzahl der Vergleiche
+import java.util.Random;
+
+public class MinMax {
+    public static void main(String[] args) {
+        Random rand = new Random();
+        int n = 10;
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = rand.nextInt(100);
+        }
+        int min = a[0], max = a[0];
+        int call = 0;
+        for (int i = 1; i < n; i++) {
+            call++;
+            if (a[i] < min) {
+                min = a[i];
+            } else if (a[i] > max) {
+                max = a[i];
+            }
+        }
+        System.out.println("Minimum: " + min + ", Maximum: " + max + ", Comparisons: " + call);
+    }
+}
 
 // Erstelle Java Programm MinMax mit Divide-and-Conquer, protokolliere die Anzahl der Vergleiche
+
+import java.util.Random;
+
+public class MinMax {
+    public static void main(String[] args) {
+        Random rand = new Random();
+        int n = 10;
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = rand.nextInt(100);
+        }
+        int min = a[0], max = a[0];
+        int call = 0;
+        if (n > 1) {
+            int mid = n / 2;
+            int[] left = new int[mid];
+            int[] right = new int[n - mid];
+            for (int i = 0; i < mid; i++) {
+                left[i] = a[i];
+            }
+            for (int i = mid; i < n; i++) {
+                right[i - mid] = a[i];
+            }
+            MinMax mm1 = new MinMax();
+            mm1.findMinMax(left, min, max, call);
+            MinMax mm2 = new MinMax();
+            mm2.findMinMax(right, min, max, call);
+            if (min > mm2.min) {
+                min = mm2.min;
+            }
+            if (max < mm2.max) {
+                max = mm2.max;
+            }
+            call += mm1.call + mm2.call;
+        } else {
+            min = a[1];
+            max = a[1];
+        }
+        System.out.println("Minimum: " + min + ", Maximum: " + max + ", Comparisons: " + call);
+    }
+
+    public void findMinMax(int[] a, int min, int max, int call) {
+        if (a.length > 1) {
+            int mid = a.length / 2;
+            int[] left = new int[mid];
+            int[] right = new int[a.length - mid];
+            for (int i = 0; i < mid; i++) {
+                left[i] = a[i];
+            }
+            for (int i = mid; i < a.length; i++) {
+                right[i - mid] = a[i];
+            }
+            findMinMax(left, min, max, call);
+            findMinMax(right, min, max, call);
+            if (min > a[mid - 1]) {
+                min = a[mid - 1];
+            }
+            if (max < a[mid - 1]) {
+                max = a[mid - 1];
+            }
+            call++;
+        } else {
+            if (min > a[0]) {
+                min = a[0];
+            }
+            if (max < a[0]) {
+                max = a[0];
+            }
+            call++;
+        }
+    }
+}

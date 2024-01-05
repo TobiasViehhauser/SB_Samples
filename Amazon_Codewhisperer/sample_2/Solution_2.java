@@ -28,22 +28,48 @@ p = new Node(0); p = current;
 
 // 3.
 if (current.val == val) exit = true; else exit = false;
-        while (p != null && p.val != val) { …; p = p.next; }
-        if (p != null && p.val == val) …
 
-        // 4.
-        if (current.next == null) {
+//simplify code: if (current.val == val) exit = true; else exit = false;
+        if (current.val == val) exit = true; else exit = false;
+
+        p = root; while (p != null && ! exit) {
+        if (p.val == val) exit = true;
+        else p = p.next;
+}
+
+// 4.
+while (p != null && p.val != val) { …; p = p.next; }
+if (p != null && p.val == val)
+
+//simplify code: while (p != null && p.val != val) { …; p = p.next; } if (p != null && p.val == val)
+        while (p != null && p.val != val) { …; p = p.next; }
+
+
+// 5.
+if (current.next == null) {
 previous.next = null; current.next = root; root = current;
 } else {
 previous.next = current.next; current.next = root; root = current;
 }
 
-// 5.
+//simplify code:if (current.next == null) { previous.next = null; current.next = root; root = current; } else { previous.next = current.next; current.next = root; root = current; }
+        if (current.next == null) { previous.next = null; current.next = root; root = current; } else { previous.next = current.next; current.next = root; root = current; }
+
+// 6.
 exit = false;
         while (p != null && ! exit) {
         if (p.val == val) exit = true;
         else p = p.next;
 }
 
-// 6.
+//simplify code:exit = false;while (p != null && ! exit) {if (p.val == val) exit = true;else p = p.next; }
+        if (p != null && p.val == val) exit = true; else exit = false;
+
+// 7.
 p = root; root = current; root.next = p
+
+//simplify code p = root; root = current; root.next = p
+        while (p != null) p = p.next;
+        root.next = p;
+}
+

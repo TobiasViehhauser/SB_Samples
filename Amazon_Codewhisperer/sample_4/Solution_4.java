@@ -31,10 +31,9 @@ int i = random.nextInt(n); // liefert eine Zufallszahl im Bereich 0 bis n-1
 
 enum Card {
 
-    //Erste Zeile musste 2 mal aber dafür 2. Kommentar automatisch
+    //Erste Zeile musste 2 mal aber dafür 2. Kommentar automatisch erstellt
     //Values Ace, King, Queen, Jack, Ten, Nine, Eight, Seven, Six, Five, Four, Three and Two are
     //assigned with the value of 11, 10, 10, 10, 10, 9, 8, 7, 6, 5, 4, 3 and 2 respectively.
-
 
     Ace(11), King(10), Queen(10), Jack(10), Ten(10), Nine(9), Eight(8), Seven(7), Six(6), Five(5), Four(4), Three(3), Two(2);
 

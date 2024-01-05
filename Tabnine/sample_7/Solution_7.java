@@ -7,6 +7,8 @@
  */
 
 
+//2 Versuche aber auch ganzen text übergeben
+
 /*
 Ein Stack (Stapel) ist ein abstrakter Datentyp, den man mit einem Stapel von Tellern vergleichen kann.
 Bei einem Tellerstapel kann man entweder einen weiteren Teller oben drauflegen oder den obersten Teller
@@ -24,21 +26,80 @@ maximal 451 Elemente enthalten. Die Elemente sind ganze Zahlen.
 2. Verwende den Stack aus Aufgabenteil a, um eine Zahlenfolge, die der Benutzer bzw. die Benutzerin
 eingibt, umzukehren.
  */
+import java.util.Stack;
 
-// Klasse Stack
+public class StackExample {
+    private static final int MAX_SIZE = 451;
+    private Stack<Integer> stack = new Stack<>();
 
-// Methode init(S)
+    public void init() {
+        stack = new Stack<>();
+    }
 
-// Methode push(S,x)
+    public void push(int x) {
+        if (stack.size() == MAX_SIZE) {
+            System.out.println("Stack is full.");
+        } else {
+            stack.push(x);
+        }
+    }
 
-// Methode top(S)
+    public int top() {
+        if (stack.empty()) {
+            System.out.println("Stack is empty.");
+            return -1;
+        } else {
+            return stack.peek();
+        }
+    }
 
-// Methode pop(S)
+    public int pop() {
+        if (stack.empty()) {
+            System.out.println("Stack is empty.");
+            return -1;
+        } else {
+            return stack.pop();
+        }
+    }
 
-// Methode empty(S)
+    public boolean empty() {
+        return stack.empty();
+    }
 
-// Methode full(S)
+    public boolean full() {
+        return stack.size() == MAX_SIZE;
+    }
 
-// Methode main
+    public static void main(String[] args) {
+        StackExample stackExample = new StackExample();
+        stackExample.init();
+        stackExample.push(10);
+        stackExample.push(20);
+        stackExample.push(30);
+        stackExample.push(40);
+        System.out.println("Top element: " + stackExample.top());
+        System.out.println("Popped element: " + stackExample.pop());
+        System.out.println("Stack is empty: " + stackExample.empty());
+        System.out.println("Stack is full: " + stackExample.full());
+    }
+}
 
-// Methode reverse
+import java.util.Scanner;
+        import java.util.Stack;
+
+public class Reverse {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a sequence of numbers separated by spaces:");
+        String input = scanner.nextLine();
+        String[] numbers = input.split(" ");
+        Stack<Integer> stack = new Stack<>();
+        for (String number : numbers) {
+            stack.push(Integer.parseInt(number));
+        }
+        while (!stack.empty()) {
+            System.out.print(stack.pop() + " ");
+        }
+        System.out.println();
+    }
+}
