@@ -1,68 +1,86 @@
 /**
  * Solution for
  *
- * Sample_2
+ * Sample_1
  * from Sprechen Sie Java? by Hanspeter Mössenböck
- * example 12.7 on page 180
+ * example 12.5 on page 179
  */
 
-// Gegeben Klasse:
-class Node {
-    int val;
-    Node next;
+/*
+Bibliotheksverwaltung. Implementieren Sie eine Bibliotheksverwaltung mit
+folgender Funktionalität:
+ */
+
+// Klasse Book
+class Book {
+        //Autor, Titel, ISBN NUmmer, Verlag
+        String author;
+        String title;
+        String isbn;
+        String publisher;
+
+        Book(String author, String title, String isbn, String publisher) {
+                this.author = author;
+                this.title = title;
+                this.isbn = isbn;
+                this.publisher = publisher;
+        }
+
+        public String toString() {
+                return author + " " + title + " " + isbn + " " + publisher;
+        }
 }
 
-    Node p, current, previous, root;
-    boolean exit;
+// Klasse Library
+class library {
+        ArrayList<Book> books;
 
-// Verbessere oder korrigiere folgende Code-Elemente:
-// 1.
-p = root;
-        while (p != null) {
-        System.out.println(p.val);
-        p = p.next;
+        library() {
+                books = new ArrayList<Book>();
         }
 
-// 2.
-        p = new Node(0);
-        p = current;
-
-// 3.
-        if (current.val == val) {
-        exit = true;
-        } else {
-        exit = false;
-        }
-        while (p != null && p.val != val) {
-        // Code
-        p = p.next;
-        }
-        if (p != null && p.val == val) {
-        // Code
+        // Methode addBook
+        addBook(Book book) {
+                books.add(book);
         }
 
-// 4.
-        if (current.next == null) {
-        previous.next = null;
-        current.next = root;
-        root = current;
-        } else {
-        previous.next = current.next;
-        current.next = root;
-        root = current;
+        // Methode search
+        String search(String isbn) {
+                for (Book book : books) {
+                        if (book.isbn.equals(isbn)) {
+                                return book.toString();
+                        }
+                }
+                return "Book not found";
         }
 
-// 5.
-        exit = false;
-        while (p != null && !exit) {
-        if (p.val == val) {
-        exit = true;
-        } else {
-        p = p.next;
-        }
+        // Methode delete
+        void delete(String isbn) {
+                for (Book book : books) {
+                        if (book.isbn.equals(isbn)) {
+                                books.remove(book);
+                                return;
+                        }
+                }
         }
 
-// 6.
-        p = root;
-        root = current;
-        root.next = p;
+        // Methode iterate
+        void iterate() {
+                for (Book book : books) {
+                        System.out.println(book);
+                }
+        }
+}
+
+// Testprogramm
+class Test {
+        public static void main(String[] args) {
+                library library = new library();
+                library.addBook(new Book("Hans", "Java", "123", "Verlag"));
+                library.addBook(new Book("Peter", "C++", "456", "Verlag"));
+                library.addBook(new Book("Max", "Python", "789", "Verlag"));
+                System.out.println(library.search("123"));
+                library.delete("123");
+                library.iterate();
+        }
+}

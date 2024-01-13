@@ -11,14 +11,14 @@ folgender Funktionalität:
 
 // Klasse Book
 
+// Klasse Library
+
+// Methode addBook
+
 // Methode search
 
 // Methode delete
 
 // Methode iterate
-
-// Klasse Library
-
-// Methode addBook
 
 // Testprogramm
